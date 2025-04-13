@@ -1,12 +1,8 @@
 # Arrayscape Python Game Dev Program
 
 ## 🚀 About
-
+This is a repository containing the demo programs/solutions to Arrayscape's Intro to Python Game Dev program using Python and pygame. 
 <br>
-
-Languages: 
-- Python
-
 
 ## 📜 Documentation
 ```
@@ -19,6 +15,11 @@ Languages:
 │   └── rockPaperScissorsStandard.py/
 ├── README.md
 ```
+* `hangman/` -- folder containing demo and a file for sample words for hangman 
+* `rockpaperscissors/` -- folder containing demo for rock paper scissors (standard and advanced versions)
+    * standard - typical solution used for the program
+    * advanced - using more complex data structures for any students who want to challenge themselves
+* readme.md -- readme file
 
 <br>
 

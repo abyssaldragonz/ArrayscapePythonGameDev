@@ -24,7 +24,7 @@ print("\nYou chose " + userAction + " and the computer chose " + computerAction 
 
 # 4. And print the winner
 if userAction == computerAction: # Tie
-    print(f"Both players selected {userAction}. It's a tie!") 
+    print("Both players selected " + userAction + ". It's a tie!") 
 elif userAction == "rock": # Player choices rock
     if computerAction == "scissors":
         print("Rock smashes scissors! You win!")
