@@ -7,6 +7,8 @@ This is a repository containing the demo programs/solutions to Arrayscape's Intr
 ## 📜 Documentation
 ```
 /
+├── asteroids/
+│   └── game.py/
 ├── hangman/
 │   └── hangman.py/
 │   └── hangmanWord.txt/
