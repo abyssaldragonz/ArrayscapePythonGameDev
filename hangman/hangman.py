@@ -16,8 +16,7 @@ MAX_INCORRECT_GUESSES = 6 # create a global variable containing the max number o
 # @return: string - representing a random word selected from the file
 def selectWord() -> str:
     file = open("hangmanWords.txt", "r") # open the file
-    fileContent = file.read() # read from the file
-    wordsList = fileContent.splitlines() # split the content based on the lines
+    wordsList = file.readlines() # read from the file
     file.close()
     return random.choice(wordsList) # return a random word from the list
 

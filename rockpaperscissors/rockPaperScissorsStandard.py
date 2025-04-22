@@ -41,6 +41,6 @@ elif userAction == "scissors": # Player choices scissors
     else:
         print("Rock smashes scissors! You lose.")
 
-# BONUS: What if the user inputs a choice that is not valid?
+# What if the user inputs a choice that is not valid?
 else:
     print("Invalid choice")
