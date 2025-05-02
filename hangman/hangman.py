@@ -6,6 +6,12 @@
 
 # INITIALIZING ###################################################################################################
 import random # a built-in module for random choice
+import pygame
+
+pygame.init() # initialize pygame
+screen = pygame.display.set_mode((400, 300))
+pygame.display.set_caption("HANGMAN")
+running = True
 
 MAX_INCORRECT_GUESSES = 6 # create a global variable containing the max number of incorrect guesses
 
@@ -16,7 +22,8 @@ MAX_INCORRECT_GUESSES = 6 # create a global variable containing the max number o
 # @return: string - representing a random word selected from the file
 def selectWord() -> str:
     file = open("hangmanWords.txt", "r") # open the file
-    wordsList = file.readlines() # read from the file
+    fileContent = file.read() # read from the file
+    wordsList = fileContent.split() # split into a list
     file.close()
     return random.choice(wordsList) # return a random word from the list
 
@@ -108,7 +115,7 @@ r"""
  |  / \
  |________
 """]
-    print(hangman[wrongGuesses]) # print out the hangmand depending on how many wrong guesses the user has had
+    print(hangman[wrongGuesses]) # print out the hangman depending on how many wrong guesses the user has had
     return # return nothing
 
 # Function to check when the game is over and print whether the user won
@@ -143,12 +150,22 @@ isGameOver = False
 drawHangman(wrongGuesses); # draw the initial hangman
 while not isGameOver: # keep going until the game is over!
     print(buildWordGuess(secretWord, guessedLetters)) # printing the progress of the word being guessed
+    print("Guessed letters: " + str(sorted(guessedLetters))) # print the list of guesses the player has already guessed
     userGuess = getPlayerInput(guessedLetters)
     if userGuess not in secretWord:
         wrongGuesses += 1 # increment the number of wrong guesses
-    print("Guessed letters: " + str(sorted(guessedLetters))) # print the list of guesses the player has already guessed
     drawHangman(wrongGuesses); # draw the hangman
     isGameOver = gameOver(wrongGuesses, secretWord, guessedLetters) # set the variable to determine if the game is over
 
 # game is over so reveal the secret word!
 print("The secret word was " + secretWord)
+
+
+
+# NEW STUFF WITH PYGAME
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+pygame.quit() # quit pygame
