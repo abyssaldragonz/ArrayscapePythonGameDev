@@ -3,7 +3,7 @@
 from pygame.image import load
 
 def load_sprite(name, with_alpha=True):
-    path = f"asteroids/assets/{name}.png"
+    path = f"assets\\{name}.png"
     loaded_sprite = load(path)
 
     if with_alpha:
